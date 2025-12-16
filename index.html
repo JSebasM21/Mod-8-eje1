@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Científica Mejorada</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="calculator-header">
+            <h1><i class="fas fa-calculator"></i> Calculadora Científica</h1>
+            <div class="error-indicator" id="errorIndicator">
+                <i class="fas fa-exclamation-triangle"></i> ERROR
+            </div>
+        </div>
+        
+        <div class="display">
+            <div class="previous-operand" id="previousOperand"></div>
+            <div class="current-operand" id="currentOperand">0</div>
+            <div class="status-bar">
+                <span class="memory-indicator" id="memoryIndicator">
+                    <i class="fas fa-sd-card"></i> M
+                </span>
+                <span class="operation-indicator" id="operationIndicator"></span>
+            </div>
+        </div>
+        
+        <div class="buttons">
+            <!-- Fila 1 - Funciones especiales -->
+            <button class="btn btn-function" data-action="clear">
+                <i class="fas fa-backspace"></i> AC
+            </button>
+            <button class="btn btn-function" data-action="delete">
+                <i class="fas fa-undo"></i> DEL
+            </button>
+            <button class="btn btn-function" data-action="memory-clear">
+                <i class="fas fa-trash"></i> MC
+            </button>
+            <button class="btn btn-function" data-action="memory-recall">
+                <i class="fas fa-redo"></i> MR
+            </button>
+            <button class="btn btn-function" data-action="memory-add">
+                <i class="fas fa-plus-circle"></i> M+
+            </button>
+            
+            <!-- Fila 2 - Operaciones avanzadas -->
+            <button class="btn btn-operator" data-operation="sin">sin</button>
+            <button class="btn btn-operator" data-operation="cos">cos</button>
+            <button class="btn btn-operator" data-operation="tan">tan</button>
+            <button class="btn btn-operator" data-operation="√">√</button>
+            <button class="btn btn-operator" data-operation="^">x^y</button>
+            
+            <!-- Fila 3 - Números y operaciones básicas -->
+            <button class="btn btn-number" data-number="7">7</button>
+            <button class="btn btn-number" data-number="8">8</button>
+            <button class="btn btn-number" data-number="9">9</button>
+            <button class="btn btn-operator" data-operation="÷">÷</button>
+            <button class="btn btn-function" data-operation="1/x">1/x</button>
+            
+            <!-- Fila 4 -->
+            <button class="btn btn-number" data-number="4">4</button>
+            <button class="btn btn-number" data-number="5">5</button>
+            <button class="btn btn-number" data-number="6">6</button>
+            <button class="btn btn-operator" data-operation="×">×</button>
+            <button class="btn btn-function" data-operation="%">%</button>
+            
+            <!-- Fila 5 -->
+            <button class="btn btn-number" data-number="1">1</button>
+            <button class="btn btn-number" data-number="2">2</button>
+            <button class="btn btn-number" data-number="3">3</button>
+            <button class="btn btn-operator" data-operation="-">-</button>
+            <button class="btn btn-function" data-operation="±">±</button>
+            
+            <!-- Fila 6 -->
+            <button class="btn btn-number" data-number="0">0</button>
+            <button class="btn btn-number" data-number=".">.</button>
+            <button class="btn btn-operator" data-operation="+">+</button>
+            <button class="btn btn-operator btn-equals" data-action="equals">
+                <i class="fas fa-equals"></i> =
+            </button>
+            <button class="btn btn-function" data-operation="!">x!</button>
+        </div>
+        
+        <div class="history">
+            <div class="history-header">
+                <h3><i class="fas fa-history"></i> Historial</h3>
+                <button class="btn-clear-history" id="clearHistory">
+                    <i class="fas fa-trash-alt"></i> Limpiar
+                </button>
+            </div>
+            <div class="history-list" id="historyList"></div>
+        </div>
+        
+        <div class="help-text">
+            <p><i class="fas fa-info-circle"></i> <strong>Nota:</strong> Errores se mostrarán claramente en rojo</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
